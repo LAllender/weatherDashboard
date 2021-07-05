@@ -37,7 +37,7 @@ I want my previous searches to be remembered for quick access.
 So that I can take the weather forcast into account when planning events.
 
 ## <h2 style="text-align:center" id="installation">Installation</h2> 
-This project can be viewed at []()
+This project can be viewed at [Weather Dashboard](https://lallender.github.io/weatherDashboard/)
 
 
 ## <h2 style="text-align:center" id="credits"> Credits</h2>
