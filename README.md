@@ -38,6 +38,8 @@ So that I can take the weather forcast into account when planning events.
 
 ## <h2 style="text-align:center" id="installation">Installation</h2> 
 This project can be viewed at [Weather Dashboard](https://lallender.github.io/weatherDashboard/)
+
+
 It should appear like this:
 ![Screenshot 1 Weather Dashboard](https://user-images.githubusercontent.com/83952257/124427929-6a750000-ddaf-11eb-8e07-5be97c8ac443.png)
 ![Screenshot 2 Weather Dashboard](https://user-images.githubusercontent.com/83952257/124427936-6d6ff080-ddaf-11eb-9a05-25f337992da9.png)
