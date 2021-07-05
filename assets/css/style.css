@@ -23,12 +23,13 @@ h4 {
     margins: none;
 }
 
-#forcast-container {
-    
+#current-forecast {
+    margin: 10% 0 10% 70%;
 }
 
-#current-forecast {
-    margin: 10% 0 10% 65%;
+#forecast {
+    font-size: larger;
+
 }
 
 #five-day-forecast {
@@ -36,12 +37,13 @@ h4 {
 }
 
 .list-group-item{
+    margin-left: -8%;
     line-height: 0.5;
     border: none;
 }
-.card-body {
-    flex:auto;
-}
+
+
+/* set background colour for uv index*/
 
 span.severe {
     padding: 3px;

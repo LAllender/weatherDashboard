@@ -40,45 +40,41 @@ var getCityWeather = function(city){
 };
 
 var displayWeather = function(weather, searchCity){
-   //clear old content
+   //clear content
    weatherContainerEl.textContent= "";  
    citySearchInputEl.textContent=searchCity;
 
-   //console.log(weather);
-
-   //create date element
+   //add date element
    var currentDate = document.createElement("span")
    currentDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
    citySearchInputEl.appendChild(currentDate);
 
-   //create an image element
+   //add image element
    var weatherIcon = document.createElement("img")
    weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
    citySearchInputEl.appendChild(weatherIcon);
 
-   //create a span element to hold temperature data
+   //add element to hold temp data
    var temperatureEl = document.createElement("span");
    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °C";
    temperatureEl.classList = "list-group-item"
+
+   weatherContainerEl.appendChild(temperatureEl);
   
-   //create a span element to hold Humidity data
+   //add element to hold Humidity data
    var humidityEl = document.createElement("span");
    humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
    humidityEl.classList = "list-group-item"
 
-   //create a span element to hold Wind data
+   weatherContainerEl.appendChild(humidityEl);
+
+   //add element to hold Wind data
    var windSpeedEl = document.createElement("span");
    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " Km/h";
    windSpeedEl.classList = "list-group-item"
 
-   //append to container
-   weatherContainerEl.appendChild(temperatureEl);
-
-   //append to container
-   weatherContainerEl.appendChild(humidityEl);
-
-   //append to container
    weatherContainerEl.appendChild(windSpeedEl);
+   
 
    var lat = weather.coord.lat;
    var lon = weather.coord.lon;
@@ -92,11 +88,8 @@ var getUvIndex = function(lat,lon){
     .then(function(response){
         response.json().then(function(data){
             displayUvIndex(data)
-           // console.log(data)
         });
     });
-    //console.log(lat);
-    //console.log(lon);
 }
  
 var displayUvIndex = function(index){
@@ -118,7 +111,7 @@ var displayUvIndex = function(index){
 
     uvIndexEl.appendChild(uvIndexValue);
 
-    //append index to current weather
+    //add index to current weather
     weatherContainerEl.appendChild(uvIndexEl);
 }
 
@@ -146,49 +139,43 @@ var display5Day = function(weather){
        var forecastEl=document.createElement("div");
        forecastEl.classList = "card bg-primary text-light m-2";
 
-       //console.log(dailyForecast)
-
-       //create date element
+       //add date element
        var forecastDate = document.createElement("h5")
        forecastDate.textContent= moment.unix(dailyForecast.dt).format("MMM D, YYYY");
        forecastDate.classList = "card-header text-center"
        forecastEl.appendChild(forecastDate);
 
        
-       //create an image element
+       //add an image element
        var weatherIcon = document.createElement("img")
        weatherIcon.classList = "card-body text-center";
        weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
 
-       //append to forecast card
        forecastEl.appendChild(weatherIcon);
        
-       //create temperature span
+       //add temperature element
        var forecastTempEl=document.createElement("span");
        forecastTempEl.classList = "card-body text-center";
        forecastTempEl.textContent = dailyForecast.main.temp + " °C";
 
-        //append to forecast card
         forecastEl.appendChild(forecastTempEl);
 
+        //add humidity element
        var forecastHumEl=document.createElement("span");
        forecastHumEl.classList = "card-body text-center";
        forecastHumEl.textContent = dailyForecast.main.humidity + "  %";
 
-       //append to forecast card
        forecastEl.appendChild(forecastHumEl);
 
-        // console.log(forecastEl);
-       //append to five day container
+       //add to container
         forecastContainerEl.appendChild(forecastEl);
     }
 
 }
 
+// add past search function and button
 var pastSearch = function(pastSearch){
  
-    // console.log(pastSearch)
-
     pastSearchEl = document.createElement("button");
     pastSearchEl.textContent = pastSearch;
     pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
@@ -206,8 +193,6 @@ var pastSearchHandler = function(event){
         get5Day(city);
     }
 }
-
-// pastSearch();
 
 cityFormEl.addEventListener("submit", formSumbitHandler);
 pastSearchButtonEl.addEventListener("click", pastSearchHandler);
