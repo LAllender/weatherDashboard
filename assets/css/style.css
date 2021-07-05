@@ -2,6 +2,8 @@
     font-family: 'Otomanopee One', sans-serif;
 }
 
+/*style search form*/
+
 .search-column {
     margin: 2% 0 0 35%;
     background-color:#7191ac;
@@ -22,6 +24,8 @@ h4 {
 #past-search-buttons {
     margins: none;
 }
+
+/* style forcast display*/
 
 #current-forecast {
     margin: 10% 0 10% 70%;
