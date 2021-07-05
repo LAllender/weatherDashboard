@@ -14,27 +14,27 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header class = "bg-dark text-info text-center display-1 p-4">
+    <header class = "bg-dark text-info text-center display-1 p-1">
         <h1>Weather Dashboard</h1>
     </header>
     <main class="container-fluid">
-        <div class = "row justify-content-md-center">
-            <div class="col-6 p-4 search-column">
+        <div class = "row">
+            <div class="col-12 col-md-3 p-4 search-column">
                 <form class ="border p-4" id = "city-search-form">
-                    <h4>Search for a City</h2>
+                    <h4>Search for a City</h4>
                     <input id="city" type = "text" autofocus = "true" class = "form-input"/>
-                    <button class = "btn btn-info" type = "submit">Search</button>
+                    <button class = "btn btn-warning" type = "submit">Search</button>
                 </form>
                 <div class = "past-search border" id = "past-search-buttons"></div>
-            </div>
-            <div class="col-12 col-md-9">
+            </div id="forcast-container">
+            <div class="col-12 col-md-7">
                 <div class = "row border selected-city" id = "current-forecast">
                     <div class = "col-12">
                         <h2 id="searched-city"></h2>
                         <div id = "current-weather-container" class = "list-group"></div>
                     </div>  
                 </div>
-                <div class = "row border m-7" id = "five-day-forecast">
+                <div class = "row border m-11" id = "five-day-forecast">
                         <h2 class= "col-12" id = "forecast"></h2>
                         <div class = "d-flex" id = "fiveday-container"></div>
                 </div>  
